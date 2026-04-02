@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.AnyDiscriminatorImplicitValues;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +31,9 @@ public class User {
     private String telefone;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Endereco> enderecos = new ArrayList<>();
+    private List<Addres> addres = new ArrayList<>();
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private ShoppingCart cart;
 }
 
