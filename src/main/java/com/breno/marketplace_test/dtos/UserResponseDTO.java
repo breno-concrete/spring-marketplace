@@ -1,0 +1,14 @@
+package com.breno.marketplace_test.dtos;
+
+import com.breno.marketplace_test.models.User;
+
+public record UserResponseDTO(
+        Long id,
+        String nome,
+        String email
+) {
+    // Um construtor que já converte a Entity para DTO automaticamente
+    public UserResponseDTO(User usuario) {
+        this(usuario.getId(), usuario.getFullName(), usuario.getEmail());
+    }
+}

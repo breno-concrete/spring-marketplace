@@ -1,4 +1,4 @@
-package com.breno.marketplace_test.models;
+package com.breno.marketplace_test.enums;
 
 public enum UserRole {
     ADMIN("admin"),
